@@ -60,5 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>La app esta intentando acceder a la camara</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>La app esta intentando acceder a la galeria</string>
 </dict>
 </plist>

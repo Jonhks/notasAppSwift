@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Categorias" representedClassName="Categorias" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nombre" optional="YES" attributeType="String"/>
+        <relationship name="relationToNotas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Notas" inverseName="relationToCategorias" inverseEntity="Notas"/>
+    </entity>
+    <entity name="Imagenes" representedClassName="Imagenes" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id_notas" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imagen" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="relationToNotas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notas" inverseName="relationToImagenes" inverseEntity="Notas"/>
+    </entity>
+    <entity name="Notas" representedClassName="Notas" syncable="YES" codeGenerationType="class">
+        <attribute name="fecha" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id_categoria" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="texto" optional="YES" attributeType="String"/>
+        <attribute name="titulo" optional="YES" attributeType="String"/>
+        <relationship name="relationToCategorias" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categorias" inverseName="relationToNotas" inverseEntity="Categorias"/>
+        <relationship name="relationToImagenes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Imagenes" inverseName="relationToNotas" inverseEntity="Imagenes"/>
+    </entity>
+    <elements>
+        <element name="Categorias" positionX="-88.41796875" positionY="-80.86328125" width="128" height="88"/>
+        <element name="Imagenes" positionX="-123.14453125" positionY="201.7734375" width="128" height="103"/>
+        <element name="Notas" positionX="93.6640625" positionY="-67.7265625" width="128" height="148"/>
+    </elements>
 </model>

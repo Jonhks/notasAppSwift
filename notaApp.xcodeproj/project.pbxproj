@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB4E549F237278B1007BC2D3 /* ImagenesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E549E237278B1007BC2D3 /* ImagenesCollectionViewController.swift */; };
+		FB4E54A123727DBC007BC2D3 /* FotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E54A023727DBC007BC2D3 /* FotoCollectionViewCell.swift */; };
 		FB6A038723710E9C002EB0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A038623710E9C002EB0C5 /* AppDelegate.swift */; };
 		FB6A038923710E9C002EB0C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A038823710E9C002EB0C5 /* SceneDelegate.swift */; };
 		FB6A038B23710E9C002EB0C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A038A23710E9C002EB0C5 /* ViewController.swift */; };
@@ -14,9 +16,14 @@
 		FB6A039123710E9C002EB0C5 /* notaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB6A038F23710E9C002EB0C5 /* notaApp.xcdatamodeld */; };
 		FB6A039323710EA0002EB0C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB6A039223710EA0002EB0C5 /* Assets.xcassets */; };
 		FB6A039623710EA0002EB0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB6A039423710EA0002EB0C5 /* LaunchScreen.storyboard */; };
+		FB6A039E23711BC0002EB0C5 /* Conexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A039D23711BC0002EB0C5 /* Conexion.swift */; };
+		FB75BB7923721A340062628D /* NotasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB75BB7823721A340062628D /* NotasTableViewController.swift */; };
+		FB75BB7B237237930062628D /* AgregarNotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB75BB7A237237930062628D /* AgregarNotaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB4E549E237278B1007BC2D3 /* ImagenesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenesCollectionViewController.swift; sourceTree = "<group>"; };
+		FB4E54A023727DBC007BC2D3 /* FotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		FB6A038323710E9C002EB0C5 /* notaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB6A038623710E9C002EB0C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB6A038823710E9C002EB0C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +33,9 @@
 		FB6A039223710EA0002EB0C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB6A039523710EA0002EB0C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB6A039723710EA0002EB0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB6A039D23711BC0002EB0C5 /* Conexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conexion.swift; sourceTree = "<group>"; };
+		FB75BB7823721A340062628D /* NotasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotasTableViewController.swift; sourceTree = "<group>"; };
+		FB75BB7A237237930062628D /* AgregarNotaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarNotaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +69,12 @@
 			isa = PBXGroup;
 			children = (
 				FB6A038623710E9C002EB0C5 /* AppDelegate.swift */,
+				FB6A039D23711BC0002EB0C5 /* Conexion.swift */,
 				FB6A038823710E9C002EB0C5 /* SceneDelegate.swift */,
+				FB75BB7823721A340062628D /* NotasTableViewController.swift */,
+				FB75BB7A237237930062628D /* AgregarNotaViewController.swift */,
+				FB4E549E237278B1007BC2D3 /* ImagenesCollectionViewController.swift */,
+				FB4E54A023727DBC007BC2D3 /* FotoCollectionViewCell.swift */,
 				FB6A038A23710E9C002EB0C5 /* ViewController.swift */,
 				FB6A038C23710E9C002EB0C5 /* Main.storyboard */,
 				FB6A039223710EA0002EB0C5 /* Assets.xcassets */,
@@ -141,8 +156,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB6A039E23711BC0002EB0C5 /* Conexion.swift in Sources */,
+				FB75BB7B237237930062628D /* AgregarNotaViewController.swift in Sources */,
+				FB75BB7923721A340062628D /* NotasTableViewController.swift in Sources */,
+				FB4E54A123727DBC007BC2D3 /* FotoCollectionViewCell.swift in Sources */,
 				FB6A038B23710E9C002EB0C5 /* ViewController.swift in Sources */,
 				FB6A038723710E9C002EB0C5 /* AppDelegate.swift in Sources */,
+				FB4E549F237278B1007BC2D3 /* ImagenesCollectionViewController.swift in Sources */,
 				FB6A038923710E9C002EB0C5 /* SceneDelegate.swift in Sources */,
 				FB6A039123710E9C002EB0C5 /* notaApp.xcdatamodeld in Sources */,
 			);
