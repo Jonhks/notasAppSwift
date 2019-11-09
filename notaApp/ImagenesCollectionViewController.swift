@@ -23,12 +23,26 @@ class ImagenesCollectionViewController: UICollectionViewController, UIImagePicke
         let buttonCamera = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(agregarFoto))
               navigationItem.rightBarButtonItem =  buttonCamera
         
+        let imageSize = UIScreen.main.bounds.width/4
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: imageSize, height: imageSize)
+        layout.minimumInteritemSpacing = 3
+        layout.minimumLineSpacing = 3
+        
+        collectionView.collectionViewLayout = layout
         mostrarImagenes()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mostrarImagenes()
+        collectionView.reloadData()
     }
 
     /*
@@ -63,6 +77,19 @@ class ImagenesCollectionViewController: UICollectionViewController, UIImagePicke
         return cell
     }
     
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "verFoto", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "verFoto"{
+            let id = sender as! NSIndexPath
+            let fila = imagenesNotas[id.row]
+            let destino = segue.destination as! VerFotoViewController
+            destino.imagenNota = fila
+        }
+    }
     
     
     @objc func agregarFoto () {
@@ -119,6 +146,17 @@ class ImagenesCollectionViewController: UICollectionViewController, UIImagePicke
         entittyImagenes.imagen = imagenFinal
         
         notas.mutableSetValue(forKey: "relationToImagenes").add(entittyImagenes)
+        
+        do {
+            try contexto.save()
+            print("Imagen guardada con éxito")
+            self.mostrarImagenes()
+            self.collectionView.reloadData()
+        } catch let error as NSError {
+            print("Ha ocurrido un error al guardar la imagen \(error.localizedDescription)")
+        }
+        
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

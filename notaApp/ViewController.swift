@@ -49,6 +49,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        let eliminar = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
+//            let contexto = Conexion().context()
+//            let borrar = self.fetchResultController.object(at: indexPath)
+//            contexto.delete(borrar)
+//
+//            do{
+//                try contexto.save()
+//            }catch let error as NSError {
+//                print("Ocurrio un erro al eliminar la nota", error.localizedDescription)
+//            }
+//        }
+//
+//        return [eliminar]
+//    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let eliminar = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
+            let contexto = Conexion().context()
+            let borrar = self.fetchResultController.object(at: indexPath)
+            contexto.delete(borrar)
+
+            do{
+                try contexto.save()
+            }catch let error as NSError {
+                print("Ocurrio un erro al eliminar la nota", error.localizedDescription)
+            }
+        }
+
+        return [eliminar]
+
+    }
+
+    
+    
     //MARK: GUARDAR EN ALERTA
     
     @IBAction func guardar(_ sender: UIBarButtonItem) {
@@ -131,5 +166,44 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 
+    //MARK: COMPROBAR RELACIONES EN CONSOLA
+    
+    @IBAction func comprobar(_ sender: UIBarButtonItem) {
+        let contexto = Conexion().context()
+        let fetchRequest : NSFetchRequest<Categorias> = Categorias.fetchRequest()
+        do {
+            let resultados = try contexto.fetch(fetchRequest)
+            print("Numero de categorias", resultados.count)
+            for res in resultados as [NSManagedObject]{
+                let nombre = res.value(forKey: "nombre")
+                print("Nombre: \(nombre!)")
+            }
+        } catch let error as NSError {
+            print("Ocurrio un problema" , error.localizedDescription)
+        }
+        
+        let fetchRequest2 : NSFetchRequest<Notas> = Notas.fetchRequest()
+        do {
+            let resultados2 = try contexto.fetch(fetchRequest2)
+            print("Numero de notas", resultados2.count)
+            for res2 in resultados2 as [NSManagedObject]{
+                let titulo = res2.value(forKey: "titulo")
+                print("Titulo> \(titulo!)")
+            }
+        } catch let error as NSError {
+            print("Ocurrio un problema" , error.localizedDescription)
+        }
+        
+        let fetchRequest3: NSFetchRequest<Imagenes> = Imagenes.fetchRequest()
+        do {
+                 let resultados3 = try contexto.fetch(fetchRequest3)
+                 print("Numero de fotos", resultados3.count)
+             } catch let error as NSError {
+                 print("Ocurrio un problema" , error.localizedDescription)
+             }
+
+    }
+    
+    
 }
 

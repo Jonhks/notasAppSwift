@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB4D577623762A400018C2FF /* VerFotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D577523762A400018C2FF /* VerFotoViewController.swift */; };
+		FB4D577823766AC30018C2FF /* CeldaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D577723766AC30018C2FF /* CeldaTableViewCell.swift */; };
 		FB4E549F237278B1007BC2D3 /* ImagenesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E549E237278B1007BC2D3 /* ImagenesCollectionViewController.swift */; };
 		FB4E54A123727DBC007BC2D3 /* FotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4E54A023727DBC007BC2D3 /* FotoCollectionViewCell.swift */; };
 		FB6A038723710E9C002EB0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A038623710E9C002EB0C5 /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB4D577523762A400018C2FF /* VerFotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerFotoViewController.swift; sourceTree = "<group>"; };
+		FB4D577723766AC30018C2FF /* CeldaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaTableViewCell.swift; sourceTree = "<group>"; };
 		FB4E549E237278B1007BC2D3 /* ImagenesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenesCollectionViewController.swift; sourceTree = "<group>"; };
 		FB4E54A023727DBC007BC2D3 /* FotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		FB6A038323710E9C002EB0C5 /* notaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +85,8 @@
 				FB6A039423710EA0002EB0C5 /* LaunchScreen.storyboard */,
 				FB6A039723710EA0002EB0C5 /* Info.plist */,
 				FB6A038F23710E9C002EB0C5 /* notaApp.xcdatamodeld */,
+				FB4D577523762A400018C2FF /* VerFotoViewController.swift */,
+				FB4D577723766AC30018C2FF /* CeldaTableViewCell.swift */,
 			);
 			path = notaApp;
 			sourceTree = "<group>";
@@ -158,7 +164,9 @@
 			files = (
 				FB6A039E23711BC0002EB0C5 /* Conexion.swift in Sources */,
 				FB75BB7B237237930062628D /* AgregarNotaViewController.swift in Sources */,
+				FB4D577623762A400018C2FF /* VerFotoViewController.swift in Sources */,
 				FB75BB7923721A340062628D /* NotasTableViewController.swift in Sources */,
+				FB4D577823766AC30018C2FF /* CeldaTableViewCell.swift in Sources */,
 				FB4E54A123727DBC007BC2D3 /* FotoCollectionViewCell.swift in Sources */,
 				FB6A038B23710E9C002EB0C5 /* ViewController.swift in Sources */,
 				FB6A038723710E9C002EB0C5 /* AppDelegate.swift in Sources */,

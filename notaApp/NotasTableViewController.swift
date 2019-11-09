@@ -79,14 +79,14 @@ class NotasTableViewController: UITableViewController, NSFetchedResultsControlle
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CeldaTableViewCell
         let nota = notas[indexPath.row]
-        cell.textLabel?.text = nota.titulo
+        cell.titulo.text = nota.titulo
         let formatoFecha = DateFormatter()
 //        formatoFecha.dateStyle = .medium
         formatoFecha.dateFormat = "MMM dd , yyyy"
         let fecha = formatoFecha.string(from: nota.fecha!)
-        cell.detailTextLabel?.text =  "\(fecha)"
+        cell.fecha.text = fecha
         // Configure the cell...
 
         return cell
@@ -100,7 +100,15 @@ class NotasTableViewController: UITableViewController, NSFetchedResultsControlle
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let eliminar = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
-            print("nota eliminada")
+            let contexto = Conexion().context()
+            let borrar = self.fetchResultController.object(at: indexPath)
+            contexto.delete(borrar)
+            
+            do{
+                try contexto.save()
+            }catch let error as NSError {
+                print("Ocurrio un erro al eliminar la nota", error.localizedDescription)
+            }
         }
         
         let camara = UITableViewRowAction(style: .normal, title: "Foto 📷") { (_, indecPath) in
